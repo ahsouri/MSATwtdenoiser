@@ -7,7 +7,7 @@ A wavelet-based de-noising method designed for MethaneSAT xCH4 retrieval (or any
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install MSATwtdenoiser.
 
 ```bash
-pip install MSATwtdenoiser==0.0.2
+pip install MSATwtdenoiser
 ```
 
 ## Usage
