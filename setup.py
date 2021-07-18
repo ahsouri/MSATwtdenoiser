@@ -10,6 +10,6 @@ setup(name='MSATwtdenoiser',
       license='MIT',
       packages = ["main"],
       install_requires=[
-          'numpy','matplotlib','scipy','pywt'
+          'numpy','matplotlib','scipy','PyWavelets'
       ],
       zip_safe=False)

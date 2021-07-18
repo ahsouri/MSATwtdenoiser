@@ -4,16 +4,16 @@ A wavelet-based de-noising method designed for MethaneSAT xCH4 retrieval (or any
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install MSATwtdenoiser.
 
 ```bash
-pip install MSATwtdenoiser
+pip install MSATwtdenoiser==0.0.1
 ```
 
 ## Usage
 
 ```python
-import foobar
+import MSATwtdenoiser
 
 # returns 'words'
 foobar.pluralize('word')
@@ -24,11 +24,6 @@ foobar.pluralize('goose')
 # returns 'phenomenon'
 foobar.singularize('phenomena')
 ```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
