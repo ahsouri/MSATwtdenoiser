@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='MSATwtdenoiser',
-      version='0.0.2',
+      version='0.0.3',
       description='Denoising a 2D signal based on wavelet',
       long_description='',
       url='https://github.com/ahsouri/MSATwtdenoiser',
