@@ -7,6 +7,7 @@ setup(name='MSATwtdenoiser',
       author='Amir Souri',
       author_email='ahsouri@gmail.com',
       license='MIT',
+      packages = ["MSATwtdenoiser"],
       install_requires=[
           'numpy','matplotlib','scipy','pywt'
       ],
