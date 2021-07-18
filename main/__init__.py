@@ -1,1 +1,1 @@
-from MSATwtdenoiser import MSATwtdenoiser,wtdenoiser,ThreshSURE,signal2wt
+from MSATwtdenoiser import MSATdenoise
