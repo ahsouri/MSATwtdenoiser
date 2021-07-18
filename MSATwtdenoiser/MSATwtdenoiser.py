@@ -23,7 +23,8 @@ class MSATdenoise(object):
             # denoise
             denoised = self.wtdenoiser(coeff1,wtname,level)
             #reshape to the 2D shape
-            denoised = np.reshape(denoised,(np.shape(data)[0],np.shape(data)[1]))
+  
+            #denoised = np.reshape(denoised,(np.shape(data)[0],np.shape(data)[1]))
 
             self.denoised = denoised
             self.coeff = coeff1
@@ -83,6 +84,7 @@ class MSATdenoise(object):
             import numpy as np
             import pywt
             from scipy.special import erfcinv
+
             # varwt
             normfac = -np.sqrt(2)*erfcinv(2*0.75) 
             # finding thresholds for each level
@@ -96,8 +98,7 @@ class MSATdenoise(object):
                 thr = sigmaest*thr
                 cfs_denoised.append(list(pywt.threshold(cfs,thr,'soft'))) #details
             #reconstruct the signal   
-            denoised = pywt.waverec2(cfs_denoised, wtname)
-
+            denoised = pywt.waverec2(cfs_denoised,wtname)
             return denoised
 
 
