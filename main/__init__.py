@@ -1,1 +1,1 @@
-from MSATwtdenoiser import MSATdenoise
+from main import MSATwtdenoiser
