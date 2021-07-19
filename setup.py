@@ -1,15 +1,18 @@
 from setuptools import setup
 
+with open('README.md') as f:
+    readme = f.read()
+
 setup(name='MSATwtdenoiser',
-      version='0.0.3',
+      version='0.0.4',
       description='Denoising a 2D signal based on wavelet',
-      long_description='',
+      long_description=readme,
       url='https://github.com/ahsouri/MSATwtdenoiser',
       author='Amir Souri',
       author_email='ahsouri@gmail.com',
       license='MIT',
       packages=['MSATwtdenoiser'],
       install_requires=[
-          'numpy','matplotlib','scipy','PyWavelets'
+          'numpy','matplotlib','scipy','PyWavelets','opencv-python'
       ],
       zip_safe=False)
