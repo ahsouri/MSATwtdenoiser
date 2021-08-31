@@ -14,6 +14,8 @@ pip install MSATwtdenoiser
 
 see example.py
 
+in terms of the name of wavelets, please check out https://pywavelets.readthedocs.io/en/latest/ref/wavelets.html
+
 or
 
 ```bash
