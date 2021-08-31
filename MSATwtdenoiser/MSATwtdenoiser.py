@@ -11,6 +11,7 @@ class MSATdenoise(object):
             ARGS: 
                 data[m,n] (float)
                 wtname (char) -> e.g, 'db2'
+                --> see https://pywavelets.readthedocs.io/en/latest/ref/wavelets.html
                 level (int)
             OUTs:
                 denoised[m,n] (float): denoised image
