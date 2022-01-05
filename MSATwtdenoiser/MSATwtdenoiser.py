@@ -65,11 +65,10 @@ class MSATdenoise(object):
             x = x.flatten()
             n = np.size(x)
             dx = np.sort(np.abs(x))
-            dx2 = dx**2
             n1 = n-2*np.arange(0,n,1)
             n2 = np.arange(n-1,-1,-1)
-            cd1 = np.cumsum(dx2,axis=0)
-            risk = (n1+cd1+n2*dx2)/n
+            cd1 = np.cumsum(dx**2,axis=0)
+            risk = (n1+cd1+n2*dx**2)/n
             ichosen = np.argmin(risk)
             thr = dx[ichosen]
 
