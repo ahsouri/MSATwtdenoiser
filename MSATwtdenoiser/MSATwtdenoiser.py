@@ -61,17 +61,17 @@ class MSATdenoise(object):
                 Thr[1x1] (float): Noise/signal threshold
             """
             import numpy as np
-
-            x=x.flatten()
+            # (N - 2 * (idx + 1) + (N - (idx + 1))*sqr_coeff + sum(sqr_coeffs[0:idx+1])) / N
+            x = x.flatten()
             n = np.size(x)
-            sx = np.sort(np.abs(x))
-            sx2 = sx**2
+            dx = np.sort(np.abs(x))
+            dx2 = dx**2
             n1 = n-2*np.arange(0,n,1)
             n2 = np.arange(n-1,-1,-1)
-            cs1 = np.cumsum(sx2,axis=0)
-            risk = (n1+cs1+n2*sx2)/n
-            ibest = np.argmin(risk)
-            thr = sx[ibest]
+            cd1 = np.cumsum(dx2,axis=0)
+            risk = (n1+cd1+n2*dx2)/n
+            ichosen = np.argmin(risk)
+            thr = dx[ichosen]
 
             return thr
 
