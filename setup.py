@@ -4,7 +4,7 @@ with open('README.md') as f:
     readme = f.read()
 
 setup(name='MSATwtdenoiser',
-      version='0.0.4',
+      version='0.0.5',
       description='Denoising a 2D signal based on wavelet',
       long_description=readme,
       long_description_content_type='text/markdown',
