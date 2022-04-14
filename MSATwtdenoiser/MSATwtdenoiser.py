@@ -5,11 +5,12 @@
 # July 2021
 class MSATdenoise(object):
 
-      def __init__(self,data,wtname='db4',level=5):
+      def __init__(self,flag=None,data,wtname='db4',level=5):
             '''
             Removing details based on the SURE threshold
             ARGS: 
                 data[m,n] (float)
+                flag [m,n] (bool)
                 wtname (char) -> e.g, 'db2'
                 --> see https://pywavelets.readthedocs.io/en/latest/ref/wavelets.html
                 level (int)
@@ -21,7 +22,12 @@ class MSATdenoise(object):
             data.astype(float)
             self.idx = np.shape(data)[0]
             self.idy = np.shape(data)[1]
-
+            
+            # fill flagged data
+            if (flag is not None):
+               data[flag] = np.nan
+               data[flag] = np.nanmean(data[:]) +\
+                            np.random.normal(0,np.nanstd(data[:]),np.size(data[np.isnan(data)]))
             # apply wt on the data
             coeff1 = self.signal2wt(data,wtname,level)
             # denoise
