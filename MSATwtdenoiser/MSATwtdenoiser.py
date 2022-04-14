@@ -5,7 +5,7 @@
 # July 2021
 class MSATdenoise(object):
 
-      def __init__(self,flag=None,data,wtname='db4',level=5):
+      def __init__(self,data,wtname='db4',level=5,flag=None):
             '''
             Removing details based on the SURE threshold
             ARGS: 
