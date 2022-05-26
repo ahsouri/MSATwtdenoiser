@@ -30,11 +30,9 @@ class MSATdenoise(object):
                             np.random.normal(0,np.nanstd(data[:]),np.size(data[np.isnan(data)]))
             # apply wt on the data
             coeff1 = self.signal2wt(data,wtname,level)
+
             # denoise
             denoised = self.wtdenoiser(coeff1,wtname,level)
-            #reshape to the 2D shape
-  
-            #denoised = np.reshape(denoised,(np.shape(data)[0],np.shape(data)[1]))
 
             self.denoised = denoised
             self.coeff = coeff1
@@ -108,14 +106,14 @@ class MSATdenoise(object):
                 thr = self.ThreshSURE(cfs/sigmaest)
                 thr = sigmaest*thr
                 cfs_denoised.append(list(pywt.threshold(cfs,thr,'soft'))) #details
-                #denoised = pywt.idwt2(list(pywt.threshold(cfs,thr,'soft')),wtname)
          
             #reconstruct the signal   
             denoised = pywt.waverec2(cfs_denoised,wtname)
-            # for certain sizes, pywt.waverec2 add an additional row or column
+            # for certain sizes, pywt.waverec2 adds an additional row or column
             # this needs to be addressed in pywt toolbox
             # for now we just resize it
             denoised = resize(denoised, dsize=(self.idy, self.idx), interpolation=INTER_NEAREST)
+
             return denoised
 
 
