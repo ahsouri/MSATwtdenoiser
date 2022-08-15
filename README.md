@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/387194641.svg)](https://zenodo.org/badge/latestdoi/387194641)
+
 # MSATwtdenoiser
 
 A wavelet-based de-noising method designed for MethaneSAT xCH4 retrieval (or any other noisy image)
